@@ -23,6 +23,8 @@
 * 建議使用redux
 * 必須實作router(可用library)
 * 將資料儲存在localstorage
+* 可以使用es6語法 [es6features](https://github.com/lukehoban/es6features)
+
 
 ##加分
 
