@@ -30,6 +30,6 @@
 
 * 根據螢幕大小調整樣式(至少有desktop/mobile兩個版本)
 * 有寫test
-
+* 可以手動拖拉待做事項，修改順序。
 
 boilerplate from https://github.com/gaearon/react-transform-boilerplate
