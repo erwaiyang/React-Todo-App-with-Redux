@@ -46,10 +46,13 @@ Completed to do（為尚未捲動至 logo 消失）、Create to Do list（為捲
 * 動態效果創造流暢的使用體驗（例如：新增待做事項，待做卡片如何出現。刪除待做事項，待做卡片如何消失等等。）
 * 使用[Redux](http://redux.js.org/)
 
-##how to start
+##How to start
 ```sh
 $ git clone https://github.com/sudo-recruit/frontend_test.git
-
+$ cd frontend_test
+$ npm install
+$ npm start
+#write your javascript in src/*.js
 ```
 
 
