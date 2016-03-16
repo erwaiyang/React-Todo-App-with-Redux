@@ -1,3 +1,4 @@
+require('../stylesheets/app.scss');
 import React, { Component } from 'react';
 // import { NICE, SUPER_NICE } from './colors';
 
