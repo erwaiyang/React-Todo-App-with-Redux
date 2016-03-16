@@ -53,6 +53,7 @@ $ cd frontend_test
 $ npm install
 $ npm start
 #write your javascript in src/*.js
+#write your scss in stylesheets/*.scss
 ```
 
 
