@@ -6,6 +6,13 @@
 ##畫面
 詳盡畫面請參考 Testing mockup 資料夾內的圖檔。
 
+畫面分成 logo、filter、新增待做之輸入框、待做卡片。
+
+不必完全照著圖中的 TODO logo 與背景顏色呈現，但是 UI元件請盡力實踐（例如待做卡片、新增待做的輸入框）。
+
+請注意，TODO list App 在捲動畫面至 logo 消失後，待做事項輸入框與 Filter 會常駐在頂端，可以參考：
+Completed to do（為尚未捲動至 logo 消失）、Create to Do list（為捲動至 logo 消失後）
+
 ##功能
 
 ###1. 新增待做事項（參考 Create to Do list.png/Create to do list2.png）
