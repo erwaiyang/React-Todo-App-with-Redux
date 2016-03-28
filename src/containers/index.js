@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 
 import Logo from '../components/Logo';
 import Nav from '../components/Nav';
+import InputArea from '../components/InputArea';
+import TodoList from '../components/TodoList';
 
 class AwesomeTodoApp extends Component {
   constructor(props) {
@@ -16,6 +18,8 @@ class AwesomeTodoApp extends Component {
       <div>
         <Logo />
         <Nav />
+        <InputArea />
+        <TodoList />
       </div>
     );
   }
