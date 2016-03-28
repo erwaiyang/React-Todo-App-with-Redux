@@ -71,3 +71,12 @@ img {
 	display: flex;
 	justify-content: center;
 }
+
+@media screen and (max-width: 480px) {
+
+	.my-input-area {
+		input {
+			width: 80%;
+		}
+	}
+}
