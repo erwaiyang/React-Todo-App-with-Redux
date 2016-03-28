@@ -4,8 +4,6 @@ import { connect } from 'react-redux';
 
 import Logo from '../components/Logo';
 import Nav from '../components/Nav';
-import Counter from '../components/Counter';
-import * as counterActions from '../actions/counterActions';
 
 class AwesomeTodoApp extends Component {
   constructor(props) {
@@ -18,10 +16,6 @@ class AwesomeTodoApp extends Component {
       <div>
         <Logo />
         <Nav />
-        <Counter
-          counter={state.count}
-          {...actions}
-        />
       </div>
     );
   }
@@ -29,13 +23,13 @@ class AwesomeTodoApp extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    state: state.counter
+
   }
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    actions: bindActionCreators(counterActions, dispatch)
+
   }
 };
 
