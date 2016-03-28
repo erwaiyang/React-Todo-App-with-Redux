@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
-import Counter from '../components/Counter';
-import * as counterActions from '../actions/counterActions';
 import { connect } from 'react-redux';
 
-class CounterApp extends Component {
+import Logo from '../components/Logo';
+import Nav from '../components/Nav';
+import Counter from '../components/Counter';
+import * as counterActions from '../actions/counterActions';
+
+class AwesomeTodoApp extends Component {
   constructor(props) {
     super(props);
   }
@@ -12,17 +15,31 @@ class CounterApp extends Component {
   render() {
     const { state, actions } = this.props;
     return (
-      <Counter
-        counter={state.count}
-        {...actions} />
+      <div>
+        <Logo />
+        <Nav />
+        <Counter
+          counter={state.count}
+          {...actions}
+        />
+      </div>
     );
   }
 }
 
-export default connect(state => ({
+const mapStateToProps = (state) => {
+  return {
     state: state.counter
-  }),
-  (dispatch) => ({
+  }
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
     actions: bindActionCreators(counterActions, dispatch)
-  })
-)(CounterApp);
+  }
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(AwesomeTodoApp);
