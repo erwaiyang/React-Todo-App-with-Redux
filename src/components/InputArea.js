@@ -7,7 +7,7 @@ export default class InputArea extends Component {
 
   render() {
     return (
-      <div>
+      <div className="my-input-area">
         <input type="text" placeholder="Type something..." />
         <button><i className="fa fa-plus"></i></button>
       </div>

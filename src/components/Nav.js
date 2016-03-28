@@ -7,7 +7,7 @@ export default class Nav extends Component {
 
   render() {
     return (
-      <div>
+      <div className="my-nav">
         <ul>
           <li>All</li>
           <li>Starred</li>

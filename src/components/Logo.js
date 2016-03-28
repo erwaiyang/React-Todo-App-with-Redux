@@ -7,7 +7,7 @@ export default class Logo extends Component {
 
   render() {
     return (
-      <div>
+      <div className="my-logo">
         <h1>TODO <small>beta</small></h1>
       </div>
     );

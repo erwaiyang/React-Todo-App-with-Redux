@@ -9,7 +9,7 @@ export default class TodoList extends Component {
 
   render() {
     return (
-      <div>
+      <div className="my-todo-list">
         <Todo />
       </div>
     );

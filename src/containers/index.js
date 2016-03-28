@@ -15,7 +15,7 @@ class AwesomeTodoApp extends Component {
   render() {
     const { state, actions } = this.props;
     return (
-      <div>
+      <div className="my-app">
         <Logo />
         <Nav />
         <InputArea />
