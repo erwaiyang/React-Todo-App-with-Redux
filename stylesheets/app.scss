@@ -38,45 +38,79 @@ img {
 
 .my-logo {
 	display: flex;
-	align-self: center;
+  justify-content: center;
+  h1{
+    font-size: 3rem;
+  }
 }
 
 .my-nav {
 	display: flex;
-	align-self: center;
-	ul {
-		display: flex;
-		justify-content: space-around;
-		li {
-			display: inline-flex;
-			padding: 0 0.2rem 0 0.2rem;
-		}
-	}
+  justify-content: center;
+  li {
+    padding-right: 1rem;
+    padding-left: 1rem;
+    display: inline-flex;
+  }
 }
 
 .my-input-area {
 	display: flex;
-	justify-content: center;
-	input {
-		width: 50%;
+  justify-content: center;
+  input{
+    width: 45%;
 		height: 3rem;
 		font-size: 2rem;
-	}
-	button {
-		width: 3rem;
-	}
+  }
+  button {
+    padding:0;
+    margin:0;
+    width: 5%;
+  }
 }
 
 .my-todo-list {
 	display: flex;
-	justify-content: center;
+  justify-content: center;
+  table {
+    width: 50%;
+		tr {
+			height: 2rem;
+		}
+		td {
+			text-align: center;
+			font-size: 1.5rem;
+		}
+		td.check {
+			font-size: 2rem;
+		}
+		td.text {
+			font-size: 2rem;
+			text-align: left;
+		}
+  }
 }
 
 @media screen and (max-width: 480px) {
 
 	.my-input-area {
 		input {
+			width: 70%;
+		}
+		button {
+			width: 10%;
+		}
+	}
+
+	.my-todo-list {
+		table {
 			width: 80%;
+			td.check {
+				font-size: 1.5rem;
+			}
+			td.text {
+				font-size: 1rem;
+			}
 		}
 	}
 }

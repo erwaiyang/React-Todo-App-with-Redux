@@ -7,10 +7,20 @@ export default class TodoList extends Component {
     super(props);
   }
 
+  _handleClick(){
+    console.log('on click!');
+  }
+
   render() {
     return (
       <div className="my-todo-list">
-        <Todo />
+        <table>
+          <Todo
+            handleStarTodo={this._handleClick}
+            text="reading a book"
+            active={false}
+            starred={true} />
+        </table>
       </div>
     );
   }
