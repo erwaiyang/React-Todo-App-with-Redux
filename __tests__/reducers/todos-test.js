@@ -1,13 +1,11 @@
 jest.unmock('../../src/reducers/todoReducer');
 
-import { todoReducer, initialState } from '../../src/reducers/todoReducer';
+import todoReducer from '../../src/reducers/todoReducer';
 import * as types from '../../src/constants/actionTypes';
 
 describe('todoReducer', () => {
     it('should return initial state', () => {
-      expect(todoReducer( undefined, {} )).toEqual(
-        initialState
-      );
+      expect(todoReducer( undefined, {} )).toEqual([]);
     });
 
     it('should handle ADD_TODO', () => {

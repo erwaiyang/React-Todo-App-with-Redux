@@ -1,15 +1,8 @@
 import * as C from '../constants/actionTypes';
 
-export const initialState = [
-  {
-    id: 0,
-    text: 'my todo',
-    active: true,
-    starred: false
-  }
-];
+const initialState = [];
 
-export function todoReducer(state = initialState, action) {
+export default function todoReducer(state = initialState, action) {
   switch (action.type) {
     case C.ADD_TODO:
       let theBiggestId = -1;
