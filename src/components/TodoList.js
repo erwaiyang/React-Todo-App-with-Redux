@@ -7,19 +7,14 @@ export default class TodoList extends Component {
     super(props);
   }
 
-  _handleClick(){
-    console.log('on click!');
-  }
-
   render() {
+    const { actions, todos } = this.props;
     return (
       <div className="my-todo-list">
         <table>
-          <Todo
-            handleStarTodo={this._handleClick}
-            text="reading a book"
-            active={false}
-            starred={true} />
+          {todos.map(todo =>
+            <Todo key={todo.id} {...todo} {...actions} />
+          )}
         </table>
       </div>
     );

@@ -5,24 +5,37 @@ class Todo extends Component {
     super(props);
   }
 
+  handleCompleteTodo(id){
+    this.props.completeTodo(id);
+  }
+  handleEditTodo(){
+
+  }
+  handleStarTodo(id){
+    this.props.starTodo(id);
+  }
+  handleDelTodo(id){
+    this.props.delTodo(id);
+  }
+
   render() {
-    const { handleCompleteTodo, handleEditTodo, handleStarTodo, handleDelTodo, active, starred, text } = this.props;
+    const { id, active, starred, text } = this.props;
     return (
       <tbody>
         <tr>
-          <td className="check" rowSpan="2" onClick={handleCompleteTodo}>
+          <td className="check" rowSpan="2" onClick={this.handleCompleteTodo.bind(this, id)}>
             {(active)? <i className="fa fa-circle-thin"></i> : <i className="fa fa-check-circle"></i>}
           </td>
-          <td className="text" rowSpan="2" onClick={handleEditTodo}>
+          <td className="text" rowSpan="2" onClick={this.handleEditTodo}>
             {(active)? <span>{text}</span>: <span><del>{text}</del></span>}
           </td>
           <td>
-            {(starred)? <i className="fa fa-star" onClick={handleStarTodo}></i> : <i className="fa fa-star-o" onClick={handleStarTodo}></i>}
+            {(starred)? <i className="fa fa-star" onClick={this.handleStarTodo.bind(this, id)}></i> : <i className="fa fa-star-o" onClick={this.handleStarTodo.bind(this, id)}></i>}
           </td>
         </tr>
         <tr>
           <td>
-            <i className="fa fa-trash-o" onClick={handleDelTodo}></i>
+            <i className="fa fa-trash-o" onClick={this.handleDelTodo.bind(this, id)}></i>
           </td>
         </tr>
       </tbody>
@@ -32,10 +45,6 @@ class Todo extends Component {
 };
 
 Todo.propTypes = {
-  handleCompleteTodo: PropTypes.func.isRequired,
-  handleEditTodo: PropTypes.func.isRequired,
-  handleStarTodo: PropTypes.func.isRequired,
-  handleDelTodo: PropTypes.func.isRequired,
   active: PropTypes.bool.isRequired,
   starred: PropTypes.bool.isRequired,
   text: PropTypes.string.isRequired
