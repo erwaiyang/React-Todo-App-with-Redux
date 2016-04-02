@@ -5,11 +5,11 @@ import { Provider } from 'react-redux';
 require ('../stylesheets/app.scss');
 
 import store from './store';
-import AppContainer from './containers';
+import App from './containers';
 
 render(
   <Provider store={store}>
-    <AppContainer />
+    <App />
   </Provider>,
   document.getElementById('root')
 );

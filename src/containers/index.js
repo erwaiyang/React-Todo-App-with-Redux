@@ -7,19 +7,17 @@ import Nav from '../components/Nav';
 import InputArea from '../components/InputArea';
 import TodoList from '../components/TodoList';
 
-class AwesomeTodoApp extends Component {
-  constructor(props) {
-    super(props);
-  }
+import * as todoActions from '../actions/todoActions'
 
+class AwesomeTodoApp extends Component {
   render() {
-    const { state, actions } = this.props;
+    const { todos, actions } = this.props;
     return (
       <div className="my-app">
         <Logo />
         <Nav />
-        <InputArea />
-        <TodoList />
+        <InputArea addTodo={actions.addTodo} />
+        <TodoList todos={todos} actions={actions} />
       </div>
     );
   }
@@ -27,13 +25,13 @@ class AwesomeTodoApp extends Component {
 
 const mapStateToProps = (state) => {
   return {
-
+    todos: state.todos
   }
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-
+    actions: bindActionCreators(todoActions, dispatch)
   }
 };
 
