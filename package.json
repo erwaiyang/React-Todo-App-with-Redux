@@ -1,7 +1,7 @@
 {
-  "name": "frontend_test",
+  "name": "react_todo_app_with_redux",
   "version": "1.0.0",
-  "description": "",
+  "description": "an advanced todo app powered by React and Redux",
   "main": "index.js",
   "scripts": {
     "start": "node devServer.js",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sudo-recruit/frontend_test.git"
+    "url": "git+https://github.com/erwaiyang/React-Todo-App-with-Redux.git"
   },
-  "author": "ocowchun <ocowchun@gmail.com>",
+  "author": "Jean Yang (erwaiyang) <bdlas321@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/sudo-recruit/frontend_test/issues"
+    "url": "https://github.com/erwaiyang/React-Todo-App-with-Redux/issues"
   },
-  "homepage": "https://github.com/sudo-recruit/frontend_test#readme",
+  "homepage": "https://github.com/erwaiyang/React-Todo-App-with-Redux#readme",
   "devDependencies": {
     "babel-core": "^6.6.5",
     "babel-jest": "^9.0.3",
