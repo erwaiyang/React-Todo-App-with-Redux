@@ -9,10 +9,10 @@ export default class Nav extends Component {
     return (
       <div className="my-nav">
         <ul>
-          <li>All</li>
-          <li>Starred</li>
-          <li>Active</li>
-          <li>Completed</li>
+          <li><a href="#all">All</a></li>
+          <li><a href="#starred">Starred</a></li>
+          <li><a href="#active">Active</a></li>
+          <li><a href="#completed">Completed</a></li>
         </ul>
       </div>
     );
