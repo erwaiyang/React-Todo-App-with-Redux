@@ -73,6 +73,7 @@ img {
 	display: flex;
   justify-content: center;
   table {
+		table-layout: fixed;
     width: 50%;
 		tr {
 			height: 2rem;
@@ -82,11 +83,19 @@ img {
 			font-size: 1.5rem;
 		}
 		td.check {
+			width: 15%;
 			font-size: 2rem;
 		}
 		td.text {
+			width: 70%;
 			font-size: 2rem;
 			text-align: left;
+			input {
+				width: 100%;
+			}
+		}
+		td.control {
+			width: 15%;
 		}
   }
 }

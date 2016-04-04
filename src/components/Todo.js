@@ -71,7 +71,7 @@ class Todo extends Component {
             {(active)? <i className="fa fa-circle-thin"></i> : <i className="fa fa-check-circle"></i>}
           </td>
           {this.renderText()}
-          <td>
+          <td className="control">
             {(starred)? <i className="fa fa-star" onClick={this.handleStarTodo.bind(this, id)}></i> : <i className="fa fa-star-o" onClick={this.handleStarTodo.bind(this, id)}></i>}
           </td>
         </tr>
