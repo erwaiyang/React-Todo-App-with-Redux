@@ -2,9 +2,11 @@ import { createStore } from 'redux';
 
 import reducers from './reducers';
 
+const initialState = (localStorage.getItem('myTodos'))? JSON.parse(localStorage.getItem('myTodos')) : [];
+
 const store = createStore(
   reducers,
-  JSON.parse(localStorage.getItem('myTodos')),
+  initialState,
   window.devToolsExtension ? window.devToolsExtension() : undefined
 );
 
