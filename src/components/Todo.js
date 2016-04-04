@@ -3,14 +3,58 @@ import React, { Component, PropTypes } from 'react';
 class Todo extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      showEdit: false,
+      tempText: props.text || ''
+    };
+  }
+
+  renderText(){
+    const { id, active } = this.props;
+    if(this.state.showEdit){
+      return (
+        <td className="text" rowSpan="2">
+          <input type="text"
+            value={this.state.tempText}
+            onChange={this.handleTextOnChange.bind(this)}
+            onBlur={this.handleTextOnBlur.bind(this, id)}
+            onKeyDown={e => this.handleOnKeyDown(e, id)}
+            autoFocus={true}
+          />
+        </td>
+      );
+    } else{
+      return (
+        <td className="text" rowSpan="2" onClick={this.handleTextOnClick.bind(this)}>
+          {(active)? <span>{this.state.tempText}</span>: <span><del>{this.state.tempText}</del></span>}
+        </td>
+      );
+    }
   }
 
   handleCompleteTodo(id){
     this.props.completeTodo(id);
   }
-  handleEditTodo(){
 
+  handleTextOnClick(){
+    this.setState({ showEdit: true});
   }
+  handleTextOnChange(e){
+    this.setState({ tempText: e.target.value });
+  }
+  handleTextOnBlur(id){
+    this.submitEdit(id);
+  }
+  handleOnKeyDown(e, id){
+    if( e.which === 13 && this.state.tempText) {
+      this.submitEdit(id);
+    }
+  }
+  submitEdit(id){
+    this.setState({ showEdit: false});
+    this.props.editTodo(id, this.state.tempText);
+  }
+
   handleStarTodo(id){
     this.props.starTodo(id);
   }
@@ -26,9 +70,7 @@ class Todo extends Component {
           <td className="check" rowSpan="2" onClick={this.handleCompleteTodo.bind(this, id)}>
             {(active)? <i className="fa fa-circle-thin"></i> : <i className="fa fa-check-circle"></i>}
           </td>
-          <td className="text" rowSpan="2" onClick={this.handleEditTodo}>
-            {(active)? <span>{text}</span>: <span><del>{text}</del></span>}
-          </td>
+          {this.renderText()}
           <td>
             {(starred)? <i className="fa fa-star" onClick={this.handleStarTodo.bind(this, id)}></i> : <i className="fa fa-star-o" onClick={this.handleStarTodo.bind(this, id)}></i>}
           </td>
