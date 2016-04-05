@@ -4,6 +4,10 @@ $pimary-color: #00D8D6;
 $secondary-color: #F6FCFF;
 
 html {
+	-webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+
 	min-height: 100%;
 	width: 100%;
 	background-repeat: no-repeat;
