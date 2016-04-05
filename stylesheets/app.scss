@@ -111,8 +111,7 @@ img {
   }
 }
 
-@media screen and (max-width: 480px) {
-
+@media all and (max-width: 780px) {
 	.my-input-area {
 		input {
 			width: 70%;
