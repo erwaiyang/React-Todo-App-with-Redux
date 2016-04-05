@@ -54,6 +54,10 @@ img {
 	top:0;
 
 	transition: all 1s ease;
+
+	.my-nav {
+		background-color: $secondary-color;
+	}
 }
 
 #sticky-helper {
@@ -64,6 +68,9 @@ img {
 .my-nav {
 	display: flex;
   justify-content: center;
+	overflow-x: scroll;
+	overflow-y: hidden;
+	white-space: nowrap;
   li {
     padding-right: 1rem;
     padding-left: 1rem;
