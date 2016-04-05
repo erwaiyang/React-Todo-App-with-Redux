@@ -54,8 +54,8 @@ class AwesomeTodoApp extends Component {
     const stickyInstance = document.getElementById('sticky');
     const stickyHelperInstance = document.getElementById('sticky-helper');
     if(stickyInstance.getClientRects()[0].top<0){
-      stickyInstance.className += ' sticky';
       stickyHelperInstance.style.height = stickyInstance.offsetHeight+'px';
+      stickyInstance.className += ' sticky';
     }
     if(scrollTop<(stickyInstance.offsetHeight+stickyInstance.offsetTop)){
       stickyInstance.className = '';
