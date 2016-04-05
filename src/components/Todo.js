@@ -26,7 +26,7 @@ class Todo extends Component {
     } else{
       return (
         <td className="text" rowSpan="2" onClick={this.handleTextOnClick.bind(this)}>
-          {(active)? <span>{this.state.tempText}</span>: <span><del>{this.state.tempText}</del></span>}
+          {(active)? <span>{this.state.tempText}</span>: <span className="completed">{this.state.tempText}</span>}
         </td>
       );
     }
@@ -71,12 +71,12 @@ class Todo extends Component {
             {(active)? <i className="fa fa-circle-thin"></i> : <i className="fa fa-check-circle"></i>}
           </td>
           {this.renderText()}
-          <td className="control">
+          <td className="star">
             {(starred)? <i className="fa fa-star" onClick={this.handleStarTodo.bind(this, id)}></i> : <i className="fa fa-star-o" onClick={this.handleStarTodo.bind(this, id)}></i>}
           </td>
         </tr>
         <tr>
-          <td>
+          <td className="trash">
             <i className="fa fa-trash-o" onClick={this.handleDelTodo.bind(this, id)}></i>
           </td>
         </tr>
