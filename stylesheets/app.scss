@@ -44,6 +44,17 @@ img {
   }
 }
 
+.sticky {
+	position: fixed;
+	width: 100%;
+	top:0;
+}
+
+#sticky-helper {
+	position: static;
+	width: 100%;
+}
+
 .my-nav {
 	display: flex;
   justify-content: center;
