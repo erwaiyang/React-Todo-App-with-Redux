@@ -6,3 +6,5 @@ export const COMPLETE_TODO = 'COMPLETE_TODO';
 export const UNCOMPLETE_TODO = 'UNCOMPLETE_TODO';
 export const STAR_TODO = 'STAR_TODO';
 export const UNSTAR_TODO = 'UNSTAR_TODO';
+
+export const DRAG_TODO = 'DRAG_TODO';

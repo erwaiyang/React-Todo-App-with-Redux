@@ -48,6 +48,16 @@ export default function todoReducer(state = initialState, action) {
           todo
       );
 
+    case C.DRAG_TODO:
+      if(action.draggedOrder === action.targetOrder)
+        return state;
+      else{
+        let copied = state.slice();
+        const dragged = copied.splice(action.draggedOrder, 1)[0];
+        copied.splice(action.targetOrder, 0, dragged);
+        return copied;
+      }
+
     default:
       return state;
   }

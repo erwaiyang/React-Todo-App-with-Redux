@@ -27,3 +27,7 @@ export function starTodo(id) {
 export function unstarTodo(id) {
   return { type: types.UNSTAR_TODO, id }
 };
+
+export function dragTodo(draggedOrder, targetOrder) {
+   return { type: types.DRAG_TODO, draggedOrder, targetOrder }
+}

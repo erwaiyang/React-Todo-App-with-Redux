@@ -84,4 +84,17 @@ describe('actions', () => {
     });
   });
 
+  describe('dragTodo', () => {
+    it('should create an action to change the order of a Todo', () => {
+      const draggedOrder = 2;
+      const targetOrder = 4;
+      const expected = {
+        type: types.DRAG_TODO,
+        draggedOrder: draggedOrder,
+        targetOrder: targetOrder
+      };
+      expect(actions.dragTodo(draggedOrder, targetOrder)).toEqual(expected);
+    });
+  });
+
 });

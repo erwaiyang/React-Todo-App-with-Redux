@@ -176,4 +176,73 @@ describe('todoReducer', () => {
       text: 'tidy my room'
     }]);
   });
+
+  it('should handle DRAG_TODO', () => {
+    const order1 = {
+        id: 3,
+        active: false,
+        starred: false,
+        text: 'hello'
+    };
+    const order2 = {
+        id: 8,
+        active: false,
+        starred: false,
+        text: 'world'
+    };
+    const order3 = {
+        id: 24,
+        active: false,
+        starred: false,
+        text: '!!'
+    };
+    const order4 = {
+      id: 168,
+      active: true,
+      starred: true,
+      text: 'money money'
+    };
+    expect(todoReducer([
+      order1,
+      order2,
+      order3
+    ], {
+      type: types.DRAG_TODO,
+      draggedOrder: 0,
+      targetOrder: 2
+    })).toEqual([
+      order2,
+      order3,
+      order1
+    ]);
+
+    expect(todoReducer([
+      order1,
+      order2,
+      order3,
+      order4
+    ], {
+      type: types.DRAG_TODO,
+      draggedOrder: 1,
+      targetOrder: 2
+    })).toEqual([
+      order1,
+      order3,
+      order2,
+      order4
+    ]);
+
+    expect([
+      order1,
+      order2
+    ], {
+      type: types.DRAG_TODO,
+      draggedOrder: 1,
+      targetOrder: 1
+    }).toEqual([
+      order1,
+      order2
+    ]);
+
+  });
 });
