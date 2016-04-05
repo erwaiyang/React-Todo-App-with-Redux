@@ -7,31 +7,10 @@ import Todo from './Todo';
 export default class TodoList extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      'filter': this.setFilter(location.hash)
-    };
-    window.onhashchange = () => {
-      this.setState({ filter: this.setFilter(location.hash) });
-    };
   }
 
-  setFilter(hash){
-    switch (hash) {
-      case '#all':
-        return SHOW_ALL;
-      case '#starred':
-        return SHOW_STARRED;
-      case '#active':
-        return SHOW_ACTIVE;
-      case '#completed':
-        return SHOW_COMPLETED;
-      default:
-        return SHOW_ALL;
-    }
-  }
-
-  filterTodos(todos){
-    switch(this.state.filter){
+  filterTodos(todos, visibleFilter){
+    switch(visibleFilter){
       case SHOW_ALL:
         return todos;
       break;
@@ -61,20 +40,20 @@ export default class TodoList extends Component {
     }
   }
 
-  renderTodos(todos, actions){
+  renderTodos(todos, actions, visibleFilter){
     return (
-      this.filterTodos(todos).map(todo =>
+      this.filterTodos(todos, visibleFilter).map(todo =>
         <Todo key={todo.id} {...todo} {...actions} />
       )
     );
   }
 
   render() {
-    const { actions, todos } = this.props;
+    const { actions, todos, visibleFilter } = this.props;
     return (
       <div className="my-todo-list">
         <table>
-          {this.renderTodos(todos, actions)}
+          {this.renderTodos(todos, actions, visibleFilter)}
         </table>
       </div>
     );

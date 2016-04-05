@@ -68,7 +68,7 @@ img {
 			font-weight: bolder;
 			color: gray;
 			text-decoration: none;
-			&:hover {
+			&:hover, &.active {
 				color: $pimary-color;
 			}
 		}

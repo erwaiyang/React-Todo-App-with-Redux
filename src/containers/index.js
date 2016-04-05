@@ -7,9 +7,24 @@ import Nav from '../components/Nav';
 import InputArea from '../components/InputArea';
 import TodoList from '../components/TodoList';
 
-import * as todoActions from '../actions/todoActions'
+import * as todoActions from '../actions/todoActions';
+import { SHOW_ALL, SHOW_STARRED, SHOW_ACTIVE, SHOW_COMPLETED } from '../constants/filterTypes';
 
 class AwesomeTodoApp extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      hash: location.hash || '#all',
+      visibleFilter: this.setFilter(location.hash)
+    };
+    window.onhashchange = () => {
+      this.setState({
+        hash: location.hash,
+        visibleFilter: this.setFilter(location.hash)
+      });
+    };
+  }
 
   componentDidMount() {
     window.addEventListener('scroll', this.handleScroll);
@@ -17,6 +32,21 @@ class AwesomeTodoApp extends Component {
 
   componentWillUnmount() {
     window.removeEventListener('scroll', this.handleScroll);
+  }
+
+  setFilter (hash){
+    switch (hash) {
+      case '#all':
+        return SHOW_ALL;
+      case '#starred':
+        return SHOW_STARRED;
+      case '#active':
+        return SHOW_ACTIVE;
+      case '#completed':
+        return SHOW_COMPLETED;
+      default:
+        return SHOW_ALL;
+    }
   }
 
   handleScroll(event){
@@ -39,11 +69,11 @@ class AwesomeTodoApp extends Component {
       <div className="my-app">
         <Logo />
         <div id="sticky">
-          <Nav />
+          <Nav hash={this.state.hash} />
           <InputArea ref="input_area" addTodo={actions.addTodo} />
         </div>
         <div id="sticky-helper" />
-        <TodoList todos={todos} actions={actions} />
+        <TodoList visibleFilter={this.state.visibleFilter} todos={todos} actions={actions} />
       </div>
     );
   }
